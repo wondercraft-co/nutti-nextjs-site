@@ -11,6 +11,8 @@
     "genc": "npm run generate:component"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-icons": "^1.3.0",
     "clsx": "^2.0.0",
     "next": "13.5.6",
     "react": "^18",
