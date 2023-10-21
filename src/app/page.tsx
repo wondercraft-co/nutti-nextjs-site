@@ -1,3 +1,4 @@
+import InstagramFeed from "@/components/atoms/InstagramFeed";
 import ProductTile from "@/components/atoms/ProductTile";
 import MainLayout from "@/components/molecules/MainLayout";
 import { cn } from "@/utils";
@@ -204,22 +205,25 @@ const tilesMapper = (tile: TProductTile, index: number) => {
   }
 };
 
-export default function Home() {
+export default async function Home() {
   return (
     <MainLayout>
-      <div className="container max-w-6xl mt-20">
-        <div className="grid grid-cols-3 gap-5 ">
-          <div className="space-y-5">
-            <div className="text-xl">
-              <strong>Cremas de nueces 100% naturales</strong> libres de sal,
-              azúcar, endulzantes artificiales, conservantes, aceites añadidos y
-              aditivos.
+      <div className="bg-no-repeat bg-contain" style={{ backgroundImage: `url('/bg-decor.svg')` }}>
+        <div className="container max-w-6xl pt-32">
+          <div className="grid grid-cols-3 gap-5 ">
+            <div className="space-y-5">
+              <div className="text-xl mb-24">
+                <strong>Cremas de nueces 100% naturales</strong> libres de sal,
+                azúcar, endulzantes artificiales, conservantes, aceites añadidos
+                y aditivos.
+              </div>
+              {col1.map(tilesMapper)}
             </div>
-            {col1.map(tilesMapper)}
+            <div className="space-y-5">{col2.map(tilesMapper)}</div>
+            <div className="space-y-5">{col3.map(tilesMapper)}</div>
           </div>
-          <div className="space-y-5">{col2.map(tilesMapper)}</div>
-          <div className="space-y-5">{col3.map(tilesMapper)}</div>
         </div>
+        <InstagramFeed />
       </div>
     </MainLayout>
   );

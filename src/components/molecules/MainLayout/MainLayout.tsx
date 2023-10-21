@@ -1,3 +1,4 @@
+import MainFooter from "@/components/atoms/MainFooter";
 import MainNavigation from "@/components/atoms/MainNavigation";
 
 interface IMainLayoutProps {
@@ -9,6 +10,7 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
     <>
       <MainNavigation />
       <main>{children}</main>
+      <MainFooter />
     </>
   );
 };
