@@ -19,6 +19,9 @@ function groupBy<T>(arr: T[], fn: (item: T) => any) {
 const StoreList = ({ stores }: IStoreListProps) => {
   const storeListRender = useCallback(() => {
     const groupedByCity = groupBy(stores, (store) => {
+      if (store.city === "Bogota") {
+        return "Bogotá";
+      }
       return store.city;
     });
     return (
@@ -26,7 +29,7 @@ const StoreList = ({ stores }: IStoreListProps) => {
         {Object.entries(groupedByCity).map(([city, stores], index) => {
           return (
             <div key={city} className="px-5">
-              <figcaption className="text-2xl font-bold mt-10 mb-4">
+              <figcaption className="text-2xl font-bold mt-10 mb-4 capitalize">
                 {city}
               </figcaption>
               <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
