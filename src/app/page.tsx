@@ -2,6 +2,8 @@ import InstagramFeed from "@/components/atoms/InstagramFeed";
 import ProductTile from "@/components/atoms/ProductTile";
 import MainLayout from "@/components/molecules/MainLayout";
 import { cn } from "@/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 type TProductTile = {
   type: "product" | "comment";
@@ -150,8 +152,7 @@ const comment1: TProductTile = {
 const comment2: TProductTile = {
   type: "comment",
   name: "luisa_rueda05",
-  description:
-    "Llevo un mes probándola, excelente producto 🔥 🙌 🩷 💫",
+  description: "Llevo un mes probándola, excelente producto 🔥 🙌 🩷 💫",
   className: randomGradientFromTo(),
 };
 const comment3: TProductTile = {
@@ -164,8 +165,7 @@ const comment3: TProductTile = {
 const comment4: TProductTile = {
   type: "comment",
   name: "natalia_sorzano",
-  description:
-    "Son las más ricas de todas!! Soy adicta a la de Marańón 🙈🙈",
+  description: "Son las más ricas de todas!! Soy adicta a la de Marańón 🙈🙈",
   className: randomGradientFromTo(),
 };
 const comment5: TProductTile = {
@@ -176,7 +176,14 @@ const comment5: TProductTile = {
   className: randomGradientFromTo(),
 };
 
-const col1 = [flexAlmendra, flexMacadamia, comment4, comment5, flexMani,  flexMaranon];
+const col1 = [
+  flexAlmendra,
+  flexMacadamia,
+  comment4,
+  comment5,
+  flexMani,
+  flexMaranon,
+];
 const col2 = [
   vidrioAlmendras,
   vidrioCanela,
@@ -222,7 +229,10 @@ const tilesMapper = (tile: TProductTile, index: number) => {
 export default async function Home() {
   return (
     <MainLayout>
-      <div className="bg-no-repeat bg-contain" style={{ backgroundImage: `url('/bg-decor.svg')` }}>
+      <div
+        className="bg-no-repeat bg-contain"
+        style={{ backgroundImage: `url('/bg-decor.svg')` }}
+      >
         <div className="container max-w-6xl pt-32">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5">
             <div className="space-y-5">
@@ -237,6 +247,41 @@ export default async function Home() {
             <div className="space-y-5">{col3.map(tilesMapper)}</div>
           </div>
         </div>
+
+        <div className="bg-[#EB99A6] py-20 md:py-44 my-44 overflow-hidden">
+          <div className="container max-w-6xl gap-10 md:gap-20 grid sm:grid-cols-2 text-[#470C16] px-5">
+            <div className="space-y-4">
+              <h2 className="text-5xl font-semibold ">Distribuidores</h2>
+              <p className="text-lg">
+                Encuentra tus cremas Nutti en los mercados saludables del país.
+                Conoce el más cercano aquí 🛒🍃🛍️
+              </p>
+              <Link
+                href="/distribuidores"
+                className="bg-white font-semibold px-5 py-4 inline-block rounded-full hover:bg-b-pink hover:text-white"
+              >
+                Ver Distribuidores
+              </Link>
+            </div>
+            <div className="relative">
+              <Image
+                className="md:-my-56 rounded-2xl z-10 relative shadow-2xl"
+                src="/Post-2.jpg"
+                width="1000"
+                height={1000}
+                alt=""
+              />
+              <Image
+                className="absolute -bottom-20 -right-20 rounded-2xl"
+                src="/decor-distr.svg"
+                width={300}
+                height={500}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="h-20"></div>
         <InstagramFeed />
       </div>
     </MainLayout>

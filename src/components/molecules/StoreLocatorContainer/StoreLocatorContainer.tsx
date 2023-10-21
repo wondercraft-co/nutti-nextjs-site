@@ -29,7 +29,10 @@ export interface Store {
 
 const StoreLocatorContainer = async ({}: IStoreLocatorContainerProps) => {
   const stores = await sanityClient.fetch<Store[]>(
-    `*[_type == "store"] | order(city asc) [0...500]`
+    `*[_type == "store"] | order(city asc) [0...500]`,
+    {
+      next: { revalidate: 120 },
+    }
   );
   return (
     <div>

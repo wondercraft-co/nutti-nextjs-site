@@ -18,7 +18,9 @@ function groupBy<T>(arr: T[], fn: (item: T) => any) {
 
 const StoreList = ({ stores }: IStoreListProps) => {
   const storeListRender = useCallback(() => {
-    const groupedByCity = groupBy(stores, (store) => store.city);
+    const groupedByCity = groupBy(stores, (store) => {
+      return store.city;
+    });
     return (
       <figure>
         {Object.entries(groupedByCity).map(([city, stores], index) => {
