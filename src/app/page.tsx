@@ -93,7 +93,7 @@ const vidrioCocoa: TProductTile = {
 };
 const vidrioGolden: TProductTile = {
   type: "product",
-  name: "Macadamia Golden Milk",
+  name: "Macadamia Golden Mix",
   image: "/products/vidrio-golden.png",
   className: "from-b-yellow to-b-teal-light",
   // className: randomGradientFromTo(),
@@ -125,7 +125,7 @@ const vidrioMaranon: TProductTile = {
 };
 const vidrioMatcha: TProductTile = {
   type: "product",
-  name: "Macadami Matcha",
+  name: "Macadamia Matchacha",
   image: "/products/vidrio-matcha.png",
   className: "from-b-purple to-b-teal-light",
   // className: randomGradientFromTo(),
@@ -133,7 +133,7 @@ const vidrioMatcha: TProductTile = {
 };
 const vidrioPink: TProductTile = {
   type: "product",
-  name: "Macadamia Pink Food",
+  name: "Macadamia Pink Fud",
   image: "/products/vidrio-pink.png",
   className: "from-b-teal to-b-teal-light",
   // className: randomGradientFromTo(),
