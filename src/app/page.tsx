@@ -248,7 +248,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="bg-[#EB99A6] py-20 md:py-44 my-44 overflow-hidden">
+        <div className="bg-[#EB99A6] py-20 md:py-44 my-44 overflow-hidden md:overflow-visible">
           <div className="container max-w-6xl gap-10 md:gap-20 grid sm:grid-cols-2 text-[#470C16] px-5">
             <div className="space-y-4">
               <h2 className="text-5xl font-semibold ">Distribuidores</h2>
