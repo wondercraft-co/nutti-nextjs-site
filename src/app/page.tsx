@@ -184,7 +184,7 @@ const comment6: TProductTile = {
 const comment7: TProductTile = {
   type: "comment",
   name: "laurapadillaconsultorjust",
-  description: "Nos hacen muy felices porque son DELICIOSAS 😍💘✨",
+  description: "Y las mas ricas de todo el mercado. 💜🥰",
   className: randomGradientFromTo(),
 };
 const comment8: TProductTile = {
