@@ -33,7 +33,6 @@ const StoreLocatorContainer = async ({}: IStoreLocatorContainerProps) => {
   );
   return (
     <div>
-      {/* <StoreLocatorMap /> */}
       <StoreList stores={stores} />
     </div>
   );

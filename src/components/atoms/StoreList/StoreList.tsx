@@ -19,19 +19,15 @@ function groupBy<T>(arr: T[], fn: (item: T) => any) {
 const StoreList = ({ stores }: IStoreListProps) => {
   const storeListRender = useCallback(() => {
     const groupedByCity = groupBy(stores, (store) => store.city);
-    console.log(
-      "🚀 ~ file: StoreList.tsx:20 ~ groupedByCity ~ groupedByCity:",
-      groupedByCity
-    );
     return (
       <figure>
         {Object.entries(groupedByCity).map(([city, stores], index) => {
           return (
-            <>
+            <div key={city} className="px-5">
               <figcaption className="text-2xl font-bold mt-10 mb-4">
                 {city}
               </figcaption>
-              <ul className="grid grid-cols-4 gap-5">
+              <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
                 {stores.map((store) => (
                   <li key={store._id}>
                     <div className="bg-white shadow-md rounded-lg overflow-hidden border border-gray-200 p-4">
@@ -56,7 +52,7 @@ const StoreList = ({ stores }: IStoreListProps) => {
                   </li>
                 ))}
               </ul>
-            </>
+            </div>
           );
         })}
       </figure>

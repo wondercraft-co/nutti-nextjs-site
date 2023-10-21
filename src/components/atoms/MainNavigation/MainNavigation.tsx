@@ -1,12 +1,13 @@
 import { navigationItems } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
+import MainNavigationMobileMenu from "../MainNavigationMobileMenu";
 interface IMainNavigationProps {}
 
 const MainNavigation = ({}: IMainNavigationProps) => {
   return (
     <header className="w-full absolute top-0">
-      <div className="container py-5">
+      <div className="container py-5 px-5">
         <div className="flex justify-between">
           <Link href="/">
             <Image
@@ -17,7 +18,9 @@ const MainNavigation = ({}: IMainNavigationProps) => {
             />
           </Link>
 
-          <nav className="flex items-center">
+          <MainNavigationMobileMenu />
+
+          <nav className="items-center hidden md:flex">
             <ul className="flex space-x-10">
               {navigationItems.map((item) => (
                 <li key={item.href}>
