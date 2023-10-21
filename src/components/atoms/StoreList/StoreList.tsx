@@ -24,7 +24,7 @@ const StoreList = ({ stores }: IStoreListProps) => {
       if (store.city === "Bogota") {
         return "Bogotá";
       }
-      return store.city;
+      return store.city.toLowerCase();
     });
     return (
       <Accordion.Root
