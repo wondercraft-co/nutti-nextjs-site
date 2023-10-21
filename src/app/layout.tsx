@@ -15,6 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:image" content="https://www.nutti.co/seo.png" />
+        <meta name="twitter:image" content="https://www.nutti.co/seo.png" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
