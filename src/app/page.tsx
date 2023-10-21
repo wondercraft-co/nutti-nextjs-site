@@ -175,6 +175,25 @@ const comment5: TProductTile = {
     "No necesito más!! Los amo @nutti.coparte de mis dias siempre 🙌🙌🙌🙌🙌🙌 🩷🩷🩷🩷🩷🩷🩷",
   className: randomGradientFromTo(),
 };
+const comment6: TProductTile = {
+  type: "comment",
+  name: "cuidartebynatalia",
+  description: "Nos hacen muy felices porque son DELICIOSAS 😍💘✨",
+  className: randomGradientFromTo(),
+};
+const comment7: TProductTile = {
+  type: "comment",
+  name: "laurapadillaconsultorjust",
+  description: "Nos hacen muy felices porque son DELICIOSAS 😍💘✨",
+  className: randomGradientFromTo(),
+};
+const comment8: TProductTile = {
+  type: "comment",
+  name: "javierprieto.t",
+  description:
+    "Cuando me preguntan por buenas cremas de nueces siempre los recomiendo! Buenísimas!",
+  className: randomGradientFromTo(),
+};
 
 const col1 = [
   flexAlmendra,
@@ -190,10 +209,20 @@ const col2 = [
   comment2,
   comment3,
   vidrioCocoa,
+  comment6,
   vidrioGolden,
   vidrioMacadamia,
 ];
-const col3 = [comment1, vidrioMani, vidrioMaranon, vidrioMatcha, vidrioPink];
+
+const col3 = [
+  comment1,
+  vidrioMani,
+  vidrioMaranon,
+  vidrioMatcha,
+  comment7,
+  comment8,
+  vidrioPink,
+];
 
 const tilesMapper = (tile: TProductTile, index: number) => {
   if (tile.type === "product" && tile.image && tile.label) {

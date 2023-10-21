@@ -22,7 +22,7 @@ const StoreList = ({ stores }: IStoreListProps) => {
   const storeListRender = useCallback(() => {
     const groupedByCity = groupBy(stores, (store) => {
       if (store.city === "Bogota") {
-        return "Bogotá";
+        return "bogotá";
       }
       return store.city.toLowerCase();
     });
