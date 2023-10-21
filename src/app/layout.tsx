@@ -6,22 +6,22 @@ import localFont from "next/font/local";
 const hkGrotesk = localFont({
   src: [
     {
-      path: "../../public/fonts/HKGrotesk-Light.woff2",
+      path: "../fonts/HKGrotesk-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/HKGrotesk-Regular.woff2",
+      path: "../fonts/HKGrotesk-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/HKGrotesk-Semibold.woff2",
+      path: "../fonts/HKGrotesk-Semibold.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/HKGrotesk-Bold.woff2",
+      path: "../fonts/HKGrotesk-Bold.woff2",
       weight: "700",
       style: "normal",
     },
