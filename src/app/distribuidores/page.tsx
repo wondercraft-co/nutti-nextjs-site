@@ -3,7 +3,9 @@ import StoreLocatorContainer from "@/components/molecules/StoreLocatorContainer"
 export default async function Stockists() {
   return (
     <MainLayout>
-      <StoreLocatorContainer />
+      <div className="container pt-32">
+        <StoreLocatorContainer />
+      </div>
     </MainLayout>
   );
 }

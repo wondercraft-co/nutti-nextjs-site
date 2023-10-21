@@ -79,6 +79,7 @@ export default function MainFooter() {
             <div key={item.name} className="pb-6">
               <Link
                 href={item.href}
+                target={item.target}
                 className="text-sm leading-6 text-gray-600 hover:text-gray-900 font-bold"
               >
                 {item.name}

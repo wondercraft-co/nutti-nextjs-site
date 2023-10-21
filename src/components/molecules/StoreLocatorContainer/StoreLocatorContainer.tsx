@@ -1,7 +1,9 @@
+import StoreList from "@/components/atoms/StoreList";
 import { sanityClient } from "@/utils/sanity";
+import { useCallback } from "react";
 interface IStoreLocatorContainerProps {}
 
-interface Store {
+export interface Store {
   _id: string;
   address: string;
   _createdAt: string;
@@ -27,16 +29,12 @@ interface Store {
 
 const StoreLocatorContainer = async ({}: IStoreLocatorContainerProps) => {
   const stores = await sanityClient.fetch<Store[]>(
-    `*[_type == "store"] | order(city asc)`
-  );
-  console.log(
-    "🚀 ~ file: StoreLocatorContainer.tsx:8 ~ StoreLocatorContainer ~ stores:",
-    stores
+    `*[_type == "store"] | order(city asc) [0...500]`
   );
   return (
     <div>
       {/* <StoreLocatorMap /> */}
-      <div>{stores.length}</div>
+      <StoreList stores={stores} />
     </div>
   );
 };
@@ -46,4 +44,5 @@ export default StoreLocatorContainer;
 // *[_type == "store"  && city match "Medellin"]
 //*[_type == 'store' && count(*[city == ^.city]) == 1]{_id,slug,city, title}
 //*[_type == "store"] | order(city asc)
+//*[_type == "store"] | order(city asc) [0...500]
 //https://www.sanity.io/docs/query-cheat-sheet#b5aec96cf56c

@@ -149,20 +149,34 @@ const comment1: TProductTile = {
 };
 const comment2: TProductTile = {
   type: "comment",
-  name: "jalenita231",
+  name: "luisa_rueda05",
   description:
-    "Las mejores de TODO el mercado, la textura y el sabor son de otro mundo! Recomendadisimas",
+    "Llevo un mes probándola, excelente product 🔥 🙌 🩷 💫",
   className: randomGradientFromTo(),
 };
 const comment3: TProductTile = {
   type: "comment",
-  name: "jalenita231",
+  name: "ceciliagomez24037",
   description:
-    "Son deliciosas, la textura y el sabor son de otro mundo! Recomendadisimas",
+    "Son las mejores que he probado tanto en textura como en sabor 🤤",
+  className: randomGradientFromTo(),
+};
+const comment4: TProductTile = {
+  type: "comment",
+  name: "natalia_sorzano",
+  description:
+    "Son las más ricas de todas!! Soy adicta a la de Marańón 🙈🙈",
+  className: randomGradientFromTo(),
+};
+const comment5: TProductTile = {
+  type: "comment",
+  name: "cami_marcas",
+  description:
+    "No necesito más!! Los amo @nutti.coparte de mis dias siempre 🙌🙌🙌🙌🙌🙌 🩷🩷🩷🩷🩷🩷🩷",
   className: randomGradientFromTo(),
 };
 
-const col1 = [flexAlmendra, flexMacadamia, comment1, flexMani, flexMaranon];
+const col1 = [flexAlmendra, flexMacadamia, comment4, comment5, flexMani,  flexMaranon];
 const col2 = [
   vidrioAlmendras,
   vidrioCanela,
@@ -210,7 +224,7 @@ export default async function Home() {
     <MainLayout>
       <div className="bg-no-repeat bg-contain" style={{ backgroundImage: `url('/bg-decor.svg')` }}>
         <div className="container max-w-6xl pt-32">
-          <div className="grid grid-cols-3 gap-5 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5">
             <div className="space-y-5">
               <div className="text-xl mb-24">
                 <strong>Cremas de nueces 100% naturales</strong> libres de sal,
