@@ -37,7 +37,7 @@ const randomGradientFromTo = () => {
 
 const flexAlmendra: TProductTile = {
   type: "product",
-  name: "Flexible Almendras",
+  name: "Flexible Almendra",
   image: "/products/sachet-almendra.png",
   className: "from-b-pink to-b-green-light",
   // className: randomGradientFromTo(),
@@ -69,7 +69,7 @@ const flexMaranon: TProductTile = {
 };
 const vidrioAlmendras: TProductTile = {
   type: "product",
-  name: "Almendras",
+  name: "Almendra",
   image: "/products/vidrio-almendras.png",
   className: "from-b-purple to-b-yellow-light",
   // className: randomGradientFromTo(),
@@ -77,7 +77,7 @@ const vidrioAlmendras: TProductTile = {
 };
 const vidrioCanela: TProductTile = {
   type: "product",
-  name: "Canela & Especias",
+  name: "Marañón Canela & Especias",
   image: "/products/vidrio-canela.png",
   className: "from-b-yellow to-b-teal-light",
   // className: randomGradientFromTo(),
