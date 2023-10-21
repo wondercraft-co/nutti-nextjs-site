@@ -73,7 +73,7 @@ const StoreList = ({ stores }: IStoreListProps) => {
                               href={store.url}
                               target="_blank"
                             >
-                              Sitio web
+                              Instagram
                             </Link>
                           </p>
                         ) : null}
