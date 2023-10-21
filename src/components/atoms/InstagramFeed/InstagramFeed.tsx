@@ -1,8 +1,24 @@
-import Script from "next/script";
+"use client";
+import { useEffect } from "react";
 
 interface IInstagramFeedProps {}
 
 const InstagramFeed = ({}: IInstagramFeedProps) => {
+  useEffect(() => {
+    (function (d, s, id) {
+      var js;
+      console.log("gogogo")
+      if (d.getElementById(id)) {
+        // return;
+        d.getElementById(id)?.remove();
+      }
+      js = d.createElement(s) as HTMLScriptElement;
+      js.id = id;
+      js.src = "https://embedsocial.com/cdn/ht.js";
+      d.getElementsByTagName("head")[0].appendChild(js);
+    })(document, "script", "EmbedSocialHashtagScript");
+  }, []);
+  
   return (
     <div className="container max-w-6xl mt-20">
       <div
@@ -18,23 +34,6 @@ const InstagramFeed = ({}: IInstagramFeedProps) => {
           Widget by EmbedSocial <span>→</span>
         </a>
       </div>
-      <Script
-        id="social-embed"
-        dangerouslySetInnerHTML={{
-          __html: ` 
-          (function (d, s, id) {
-            var js;
-            if (d.getElementById(id)) {
-              return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://embedsocial.com/cdn/ht.js";
-            d.getElementsByTagName("head")[0].appendChild(js);
-          })(document, "script", "EmbedSocialHashtagScript");
-          `,
-        }}
-      ></Script>
     </div>
   );
 };

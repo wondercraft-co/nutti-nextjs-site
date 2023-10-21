@@ -5,7 +5,8 @@ const navigation = {
   social: [
     {
       name: "Facebook",
-      href: "#",
+      enabled: true,
+      href: "https://www.facebook.com/nutti.co/",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -18,7 +19,8 @@ const navigation = {
     },
     {
       name: "Instagram",
-      href: "#",
+      enabled: true,
+      href: "https://www.instagram.com/nutti.co",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -31,6 +33,7 @@ const navigation = {
     },
     {
       name: "Twitter",
+      enabled: false,
       href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -40,6 +43,7 @@ const navigation = {
     },
     {
       name: "GitHub",
+      enabled: false,
       href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -53,6 +57,7 @@ const navigation = {
     },
     {
       name: "YouTube",
+      enabled: false,
       href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -87,17 +92,20 @@ export default function MainFooter() {
             </div>
           ))}
         </nav>
-        <div className="mt-10 flex justify-center space-x-10 hidden">
-          {navigation.social.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-gray-400 hover:text-gray-500"
-            >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </Link>
-          ))}
+        <div className="mt-10 flex justify-center space-x-10">
+          {navigation.social
+            .filter((item) => item.enabled)
+            .map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </Link>
+            ))}
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
           &copy; {new Date().getFullYear()} Nutti.co. All rights reserved.
