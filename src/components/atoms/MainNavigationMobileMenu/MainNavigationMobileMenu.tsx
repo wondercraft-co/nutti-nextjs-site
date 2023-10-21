@@ -10,7 +10,7 @@ const MainNavigationMobileMenu = () => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button aria-label="Customise options">
+        <button aria-label="Customise options" className="md:hidden">
           <HamburgerMenuIcon className="w-6 h-6" />
         </button>
       </DropdownMenu.Trigger>
