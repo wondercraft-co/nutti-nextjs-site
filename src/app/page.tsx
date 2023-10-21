@@ -151,7 +151,7 @@ const comment2: TProductTile = {
   type: "comment",
   name: "luisa_rueda05",
   description:
-    "Llevo un mes probándola, excelente product 🔥 🙌 🩷 💫",
+    "Llevo un mes probándola, excelente producto 🔥 🙌 🩷 💫",
   className: randomGradientFromTo(),
 };
 const comment3: TProductTile = {
