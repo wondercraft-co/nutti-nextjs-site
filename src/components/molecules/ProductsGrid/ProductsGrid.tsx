@@ -1,6 +1,7 @@
+"use client";
+import FadeInMotion from "@/components/atoms/FadeInMotion";
 import ProductTile from "@/components/atoms/ProductTile";
 import { cn } from "@/utils";
-
 
 type TProductTile = {
   type: "product" | "comment";
@@ -144,52 +145,52 @@ const comment1: TProductTile = {
   name: "cristi.titi2312",
   description:
     "Es super hiper mega deliciosaaaaa la amo 🤤😍 destaparla y sentir esa aroma a canela y luego sentir su suave textura al probarla, es lo máximo super recomendada 👏👏👏... nota: todas.son deliciosas uuff pero esta es la mas 🔝💯",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment2: TProductTile = {
   type: "comment",
   name: "luisa_rueda05",
   description: "Llevo un mes probándola, excelente producto 🔥 🙌 🩷 💫",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment3: TProductTile = {
   type: "comment",
   name: "ceciliagomez24037",
   description:
     "Son las mejores que he probado tanto en textura como en sabor 🤤",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment4: TProductTile = {
   type: "comment",
   name: "natalia_sorzano",
   description: "Son las más ricas de todas!! Soy adicta a la de Marańón 🙈🙈",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment5: TProductTile = {
   type: "comment",
   name: "cami_marcas",
   description:
     "No necesito más!! Los amo @nutti.coparte de mis dias siempre 🙌🙌🙌🙌🙌🙌 🩷🩷🩷🩷🩷🩷🩷",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment6: TProductTile = {
   type: "comment",
   name: "cuidartebynatalia",
   description: "Nos hacen muy felices porque son DELICIOSAS 😍💘✨",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment7: TProductTile = {
   type: "comment",
   name: "laurapadillaconsultorjust",
   description: "Y las mas ricas de todo el mercado. 💜🥰",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 const comment8: TProductTile = {
   type: "comment",
   name: "javierprieto.t",
   description:
     "Cuando me preguntan por buenas cremas de nueces siempre los recomiendo! Buenísimas!",
-  className: randomGradientFromTo(),
+  className: "bg-b-pink",
 };
 
 const col1 = [
@@ -221,37 +222,36 @@ const col3 = [
   vidrioPink,
 ];
 
-const tilesMapper = (tile: TProductTile, index: number) => {
+const tilesMapper = (tile: TProductTile, index: number, column: number) => {
   if (tile.type === "product" && tile.image && tile.label) {
     return (
-      <ProductTile
-        key={index}
-        name={tile.name}
-        image={tile.image}
-        className={tile.className}
-        modalImageUrl={tile.label}
-      />
+      <FadeInMotion delay={index * column * 0.1} key={index}>
+        <ProductTile
+          name={tile.name}
+          image={tile.image}
+          className={tile.className}
+          modalImageUrl={tile.label}
+        />
+      </FadeInMotion>
     );
   } else {
     return (
-      <div
-        key={index}
-        className="bg-white p-4 rounded-2xl flex justify-center gap-3 shadow-xl"
-      >
-        <div
-          className={cn(
-            "bg-gradient-to-t w-10 h-10 flex-shrink-0 rounded-full",
-            tile.className
-          )}
-        ></div>
-        <div className="text-sm">
-          <strong>{tile.name}</strong>: {tile.description}
+      <FadeInMotion delay={index * column * 0.1} key={index}>
+        <div className="bg-white p-4 rounded-2xl flex justify-center gap-3 shadow-xl">
+          <div
+            className={cn(
+              "bg-gradient-to-t w-10 h-10 flex-shrink-0 rounded-full",
+              tile.className
+            )}
+          ></div>
+          <div className="text-sm">
+            <strong>{tile.name}</strong>: {tile.description}
+          </div>
         </div>
-      </div>
+      </FadeInMotion>
     );
   }
 };
-
 
 interface IProductsGridProps {}
 
@@ -260,15 +260,21 @@ const ProductsGrid = ({}: IProductsGridProps) => {
     <div className="container max-w-6xl pt-32">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5">
         <div className="space-y-5">
-          <div className="text-xl mb-24">
-            <strong>Cremas de nueces 100% naturales</strong> libres de sal,
-            azúcar, endulzantes artificiales, conservantes, aceites añadidos y
-            aditivos.
-          </div>
-          {col1.map(tilesMapper)}
+          <FadeInMotion>
+            <div className="text-xl mb-24">
+              <strong>Cremas de nueces 100% naturales</strong> libres de sal,
+              azúcar, endulzantes artificiales, conservantes, aceites añadidos y
+              aditivos.
+            </div>
+          </FadeInMotion>
+          {col1.map((tile, index) => tilesMapper(tile, index, 1))}
         </div>
-        <div className="space-y-5">{col2.map(tilesMapper)}</div>
-        <div className="space-y-5">{col3.map(tilesMapper)}</div>
+        <div className="space-y-5">
+          {col2.map((tile, index) => tilesMapper(tile, index, 2))}
+        </div>
+        <div className="space-y-5">
+          {col3.map((tile, index) => tilesMapper(tile, index, 3))}
+        </div>
       </div>
     </div>
   );

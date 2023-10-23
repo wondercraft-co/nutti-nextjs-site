@@ -7,7 +7,6 @@ const InstagramFeed = ({}: IInstagramFeedProps) => {
   useEffect(() => {
     (function (d, s, id) {
       var js;
-      console.log("gogogo")
       if (d.getElementById(id)) {
         // return;
         d.getElementById(id)?.remove();

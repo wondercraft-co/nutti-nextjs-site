@@ -1,6 +1,6 @@
+import { cn } from "@/utils";
 import Image from "next/image";
 import LabelsModal from "../LabelsModal";
-import { cn } from "@/utils";
 import ProductTileDecor from "../ProductTileDecor";
 
 interface IProductTileProps {
