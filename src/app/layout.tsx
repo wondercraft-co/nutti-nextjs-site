@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Nutti - Cremas de nueces",
@@ -37,6 +38,25 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YRDCCW9LD2"
+          id="tag_manage"
+        ></Script>
+
+        <Script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-2B5RJQ59R6');
+        `,
+          }}
+        ></Script>
       </head>
       <body className={`font-sans antialiased bg-b-back`}>{children}</body>
     </html>
