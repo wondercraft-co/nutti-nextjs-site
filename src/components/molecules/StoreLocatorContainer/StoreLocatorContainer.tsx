@@ -1,31 +1,7 @@
 import StoreList from "@/components/atoms/StoreList";
-import { sanityClient } from "@/utils/sanity";
-import { useCallback } from "react";
+import { Store, sanityClient } from "@/utils/sanity";
 interface IStoreLocatorContainerProps {}
 
-export interface Store {
-  _id: string;
-  address: string;
-  _createdAt: string;
-  url: string;
-  phone: string;
-  country_iso: string;
-  slug: {
-    _type: string;
-    current: string;
-  };
-  country: string;
-  location: {
-    lat: number;
-    lng: number;
-    _type: string;
-  };
-  _type: string;
-  title: string;
-  _updatedAt: string;
-  city: string;
-  _rev: string;
-}
 
 const StoreLocatorContainer = async ({}: IStoreLocatorContainerProps) => {
   const stores = await sanityClient.fetch<Store[]>(

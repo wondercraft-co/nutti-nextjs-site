@@ -11,6 +11,7 @@ export default async function Stockists() {
   return (
     <MainLayout>
       <div className="container pt-32">
+        <h1 className="text-3xl font-semibold mb-12 text-center">Nuestros Distribuidores</h1>
         <StoreLocatorContainer />
       </div>
     </MainLayout>

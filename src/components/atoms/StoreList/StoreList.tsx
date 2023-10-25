@@ -1,5 +1,5 @@
 "use client";
-import { Store } from "@/components/molecules/StoreLocatorContainer/StoreLocatorContainer";
+import { Store } from "@/utils/sanity";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
