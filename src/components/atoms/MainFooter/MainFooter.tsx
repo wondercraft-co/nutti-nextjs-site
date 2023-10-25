@@ -100,7 +100,7 @@ export default function MainFooter() {
                 key={item.name}
                 href={item.href}
                 target="_blank"
-                className="text-gray-400 hover:text-gray-500"
+                className="text-gray-900 hover:text-gray-500"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />

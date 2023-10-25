@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-hk-grotesk)"],
+        serif: ["var(--font-orange)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -41,6 +42,10 @@ const config: Config = {
         },
         "b-orange": {
           DEFAULT: "#FFDDC6",
+        },
+        "b-red": {
+          DEFAULT: "#E35C5C",
+          dark: "#470C16",
         },
         "b-purple": {
           DEFAULT: "#9376BB",

@@ -7,7 +7,7 @@ type ScrollDirection = typeof SCROLL_UP | typeof SCROLL_DOWN;
 
 const useScrollDirection = ({
   initialDirection = SCROLL_UP,
-  thresholdPixels = 10,
+  thresholdPixels = 40,
 }: {
   initialDirection?: ScrollDirection;
   thresholdPixels?: number;

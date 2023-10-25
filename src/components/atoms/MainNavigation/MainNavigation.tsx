@@ -14,7 +14,7 @@ const MainNavigation = ({}: IMainNavigationProps) => {
   return (
     <header
       className={cn(
-        "w-full fixed top-0 transition-all duration-300 z-20 ",
+        "w-full fixed top-0 transition-all duration-300 z-20 text-b-red-dark",
         {
           "bg-b-back": y && y > 100,
         }

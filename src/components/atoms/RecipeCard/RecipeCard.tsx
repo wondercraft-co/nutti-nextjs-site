@@ -4,6 +4,7 @@ import { useNextSanityImage } from "next-sanity-image";
 import { PortableText } from "@portabletext/react";
 
 import Image from "next/image";
+import Link from "next/link";
 interface IRecipeCardProps {
   recipe: Recipe;
 }
@@ -34,7 +35,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
               <a
                 key={ingredient.name}
                 href={"recipe.category.href"}
-                className="relative z-10 rounded-full bg-b-yellow px-3 py-1.5 text-black font-semibold hover:bg-b-yellow-light"
+                className="relative z-10 rounded-full bg-b-teal-light px-3 py-1 text-black font-semibold hover:bg-b-yellow-light"
               >
                 {ingredient.name.replace("Crema de ", "")}
               </a>
@@ -42,11 +43,14 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
         </div>
         <div className="">
           <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href={"recipe.href"} className=" after:content-[' '] after:absolute after:inset-0 ">
+            <Link
+              href={`/recetas/${recipe.slug.current}`}
+              scroll={false}
+              className=" after:content-[' '] after:absolute after:inset-0 "
+            >
               {recipe.title}
-            </a>
+            </Link>
           </h3>
-          {/* <PortableText value={recipe.description} /> */}
         </div>
       </div>
     </article>

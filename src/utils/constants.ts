@@ -1,5 +1,5 @@
 export const navigationItems = [
-  { name: "Home", href: "/", target: "" },
+  { name: "Productos", href: "/", target: "" },
   { name: "Distribuidores", href: "/distribuidores", target: "" },
   {
     name: "Contactanos",
