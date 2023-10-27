@@ -56,7 +56,11 @@ const RecipeListContainer = async ({ tag = "" }: IRecipeListContainerProps) => {
                         "bg-b-yellow": tag === product.slug,
                       }
                     )}
-                    href={`/recetas/${product.slug}`}
+                    href={
+                      tag === product.slug
+                        ? "/recetas"
+                        : `/recetas/${product.slug}`
+                    }
                   >
                     {product.name}
                   </Link>
