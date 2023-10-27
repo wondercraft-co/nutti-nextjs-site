@@ -4,14 +4,14 @@ import { Recipe, sanityClient } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
-
-export default async function RecipeDetail({
-  params,
-}: {
+import { Metadata } from "next/types";
+interface PageProps {
   params: {
     slug: string;
   };
-}) {
+}
+
+const getRecipe = async (slug: string) => {
   const recipe = await sanityClient.fetch<Recipe>(
     `*[_type == "recipe" && slug.current == $slug][0] {
       ..., 
@@ -32,9 +32,28 @@ export default async function RecipeDetail({
       }`,
     {
       next: { revalidate: 120 },
-      slug: params.slug,
+      slug: slug,
     }
   );
+  return recipe;
+};
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = params;
+  const recipe = await getRecipe(slug);
+
+  return {
+    title: recipe.title + " - Nutti - Cremas de nueces",
+    description:
+      "Recetas practicas y deliciosas con nuestras cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",
+  };
+}
+
+export default async function RecipeDetail({ params }: PageProps) {
+  const { slug } = params;
+  const recipe = await getRecipe(slug);
   return (
     <MainLayout>
       <div className="container max-w-6xl pt-32">
