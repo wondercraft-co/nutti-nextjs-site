@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
   return (
     <article
       key={recipe._id}
-      className="flex flex-col items-start justify-between relative"
+      className="relative flex flex-col items-start justify-between"
     >
       <div className="relative w-full">
         <Image
@@ -35,7 +35,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
               <a
                 key={ingredient.name}
                 href={"recipe.category.href"}
-                className="relative z-10 rounded-full bg-b-teal-light px-3 py-1 text-black font-semibold hover:bg-b-yellow-light"
+                className="bg-b-teal-light hover:bg-b-yellow-light relative z-10 rounded-full px-3 py-1 font-semibold text-black"
               >
                 {ingredient.name.replace("Crema de ", "")}
               </a>
@@ -44,7 +44,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
         <div className="">
           <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
             <Link
-              href={`/recetas/${recipe.slug.current}`}
+              href={`/recetas/detalle/${recipe.slug.current}`}
               scroll={false}
               className=" after:content-[' '] after:absolute after:inset-0 "
             >

@@ -16,7 +16,7 @@ export default async function Home() {
         <div className="bg-[#EB99A6] py-20 md:py-44 my-44 overflow-hidden md:overflow-visible">
           <div className="container max-w-6xl gap-10 md:gap-20 grid sm:grid-cols-2 text-b-red-dark px-5">
             <div className="space-y-4">
-              <h2 className="text-5xl font-semibold ">Distribuidores</h2>
+              <h2 className="text-5xl font-semibold font-serif tracking-wide">Distribuidores</h2>
               <p className="text-lg">
                 Encuentra tus cremas Nutti en los mercados saludables del país.
                 Conoce el más cercano aquí 🛒🍃🛍️

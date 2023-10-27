@@ -1,11 +1,17 @@
 import MainLayout from "@/components/molecules/MainLayout";
 import RecipeListContainer from "@/components/molecules/RecipeListContainer";
-import { Recipe, sanityClient } from "@/utils/sanity";
 
-export default async function Recipes() {
+export default async function Recipes({
+  params,
+}: {
+  params: {
+    tag: string;
+  };
+}) {
+  const { tag } = params;
   return (
     <MainLayout>
-      <RecipeListContainer />
+      <RecipeListContainer tag={tag} />
     </MainLayout>
   );
 }
