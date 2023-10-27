@@ -23,15 +23,6 @@ export async function GET(request: Request) {
           alignItems: "center",
         }}
       >
-        <img
-          width="256"
-          height="256"
-          src={`https://github.com/${username}.png`}
-          style={{
-            borderRadius: 128,
-          }}
-          alt=""
-        />
         Recetas Saludables
       </div>
     ),
