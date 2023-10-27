@@ -39,24 +39,28 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YRDCCW9LD2"
-          id="tag_manage"
-        ></Script>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ? (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+              id="tag_manage"
+            ></Script>
 
-        <Script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
+            <Script
+              id="google-analytics"
+              dangerouslySetInnerHTML={{
+                __html: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
       
-        gtag('config', 'G-2B5RJQ59R6');
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `,
-          }}
-        ></Script>
+              }}
+            ></Script>
+          </>
+        ) : null}
       </head>
       <body className={`font-sans antialiased bg-b-back`}>{children}</body>
     </html>
