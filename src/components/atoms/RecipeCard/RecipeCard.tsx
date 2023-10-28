@@ -45,7 +45,6 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
           <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
             <Link
               href={`/recetas/detalle/${recipe.slug.current}`}
-              scroll={false}
               className=" after:content-[' '] after:absolute after:inset-0 "
             >
               {recipe.title}
