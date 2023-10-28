@@ -61,7 +61,7 @@ export default async function RecipeDetail({ params }: PageProps) {
   const recipe = await getRecipe(slug);
   return (
     <MainLayout>
-      <div className="container max-w-6xl pt-32">
+      <div className="container max-w-6xl pt-32 px-5">
         <Link href="/recetas" className="">
           <span className="bg-b-teal-light font-semibold px-5 py-4 rounded-full hover:bg-b-teal hover:text-white inline-flex items-center gap-3">
             <ArrowLeftIcon className="w-5 h-5" />
