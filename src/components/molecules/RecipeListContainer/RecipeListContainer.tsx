@@ -43,7 +43,7 @@ const RecipeListContainer = async ({ tag = "" }: IRecipeListContainerProps) => {
             Recetas Nutti
           </h1>
           <div className="mb-4 flex gap-5 font-semibold">
-            Que cremas Nutti tienes?
+            Cuál de las cremas Nutti tienes?
           </div>
           <div>
             <ul className="flex flex-wrap gap-2">
