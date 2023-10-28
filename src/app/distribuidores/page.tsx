@@ -6,6 +6,9 @@ import { Metadata } from "next/types";
 export const metadata: Metadata = {
   title: "Distribuidores - Nutti - Cremas de nueces",
   description: "Listado de todos nuestros distribuidores",
+  openGraph: {
+    images: "https://www.nutti.co/api/og?title=Distribuidores",
+  },
 };
 
 export default async function Stockists() {

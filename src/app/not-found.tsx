@@ -1,8 +1,13 @@
-import InstagramFeed from "@/components/atoms/InstagramFeed";
 import MainLayout from "@/components/molecules/MainLayout";
-import ProductsGrid from "@/components/molecules/ProductsGrid";
-import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  title: "Nutti - Cremas de nueces",
+  description:
+    "Cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",
+};
+
 
 export default async function Home() {
   return (

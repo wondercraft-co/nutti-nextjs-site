@@ -48,6 +48,11 @@ export async function generateMetadata({
     title: recipe.title + " - Nutti - Cremas de nueces",
     description:
       "Recetas practicas y deliciosas con nuestras cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",
+    openGraph: {
+      images: encodeURI(
+        "https://www.nutti.co/api/og?title=Recetas: " + recipe.title
+      ),
+    },
   };
 }
 

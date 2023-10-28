@@ -3,6 +3,13 @@ import MainLayout from "@/components/molecules/MainLayout";
 import ProductsGrid from "@/components/molecules/ProductsGrid";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  title: "Nutti - Cremas de nueces",
+  description:
+    "Cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",
+};
 
 export default async function Home() {
   return (
@@ -16,7 +23,9 @@ export default async function Home() {
         <div className="bg-[#EB99A6] py-20 md:py-44 my-44 overflow-hidden md:overflow-visible">
           <div className="container max-w-6xl gap-10 md:gap-20 grid sm:grid-cols-2 text-b-red-dark px-5">
             <div className="space-y-4">
-              <h2 className="text-5xl font-semibold font-serif tracking-wide">Distribuidores</h2>
+              <h2 className="text-5xl font-semibold font-serif tracking-wide">
+                Distribuidores
+              </h2>
               <p className="text-lg">
                 Encuentra tus cremas Nutti en los mercados saludables del país.
                 Conoce el más cercano aquí 🛒🍃🛍️
