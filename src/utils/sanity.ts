@@ -1,5 +1,4 @@
 // ./src/utils/sanity/client.ts
-import { PortableTextComponentProps } from "@portabletext/react";
 import { createClient } from "next-sanity";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID; // "pv8y60vp"
