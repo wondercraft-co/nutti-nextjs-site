@@ -11,11 +11,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 3600;
+
 export default async function Stockists() {
   const stores = await sanityClient.fetch<Store[]>(
     `*[_type == "store"] | order(city asc) [0...500]`,
     {
-      next: { revalidate: 120 },
+      next: { revalidate: 3600 },
     }
   );
   return (
