@@ -3,11 +3,11 @@ import Link from "next/link";
 import { Metadata } from "next/types";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nutti.co"),
   title: "Nutti - Cremas de nueces",
   description:
     "Cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",
 };
-
 
 export default async function Home() {
   return (

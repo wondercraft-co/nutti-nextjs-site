@@ -4,6 +4,7 @@ import { Store, sanityClient } from "@/utils/sanity";
 import { Metadata } from "next/types";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nutti.co"),
   title: "Distribuidores - Nutti - Cremas de nueces",
   description: "Listado de todos nuestros distribuidores",
   openGraph: {
@@ -11,11 +12,11 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 3600;
 
 export default async function Stockists() {
   const stores = await sanityClient.fetch<Store[]>(
     `*[_type == "store"] | order(city asc) [0...500]`,
+    {},
     {
       next: { revalidate: 3600 },
     }

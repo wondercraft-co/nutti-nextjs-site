@@ -31,8 +31,10 @@ const getRecipe = async (slug: string) => {
         }
       }`,
     {
-      next: { revalidate: 120 },
       slug: slug,
+    },
+    {
+      next: { revalidate: 120 },
     }
   );
   return recipe;
@@ -45,6 +47,7 @@ export async function generateMetadata({
   const recipe = await getRecipe(slug);
 
   return {
+    metadataBase: new URL("https://www.nutti.co"),
     title: recipe.title + " - Nutti - Cremas de nueces",
     description:
       "Recetas practicas y deliciosas con nuestras cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",

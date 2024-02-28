@@ -31,8 +31,10 @@ const RecipeListContainer = async ({ tag = "" }: IRecipeListContainerProps) => {
         }
       }`,
     {
-      next: { revalidate: 120 },
       keyword: tag,
+    },
+    {
+      next: { revalidate: 120 },
     }
   );
   return (
