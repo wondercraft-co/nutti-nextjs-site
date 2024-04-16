@@ -26,23 +26,24 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
           className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
           alt=""
         />
-      </div>
-      <div className="max-w-xl">
-        <div className="mt-3 flex items-center gap-x-4 text-xs">
+        <div className="mt-3 flex items-center gap-x-4 text-xs flex-wrap absolute bottom-2 left-2 gap-1">
           {recipe.ingredients
-            .filter((i) => i.name.toLowerCase().includes("nutti"))
-            .map((ingredient) => (
+            ?.filter((i) => i.name)
+            ?.filter((i) => i.name.toLowerCase().includes("nutti"))
+            ?.map((ingredient) => (
               <a
                 key={ingredient.name}
                 href={"recipe.category.href"}
-                className="bg-b-teal-light hover:bg-b-yellow-light relative z-10 rounded-full px-3 py-1 font-semibold text-black"
+                className="bg-b-teal-light hover:bg-b-yellow-light relative z-10 rounded-full px-3 py-1 font-semibold text-black whitespace-nowrap"
               >
-                {ingredient.name.replace("Crema de ", "")}
+                {ingredient.name.replace("Crema de ", "").replace(/Nutti$/, "")}
               </a>
             ))}
         </div>
+      </div>
+      <div className="max-w-xl">
         <div className="">
-          <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+          <h3 className="mt-3 text-2xl font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
             <Link
               href={`/recetas/detalle/${recipe.slug.current}`}
               className=" after:content-[' '] after:absolute after:inset-0 "

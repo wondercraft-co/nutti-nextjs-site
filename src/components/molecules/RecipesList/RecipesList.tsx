@@ -7,7 +7,7 @@ interface IRecipesListProps {
 
 const RecipesList = ({ recipes }: IRecipesListProps) => {
   return (
-    <div className="grid md:grid-cols-4 gap-5 px-5">
+    <div className="grid md:grid-cols-4 gap-8 px-5">
       {recipes.map((recipe) => (
         <RecipeCard key={recipe._id} recipe={recipe} />
       ))}
