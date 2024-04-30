@@ -262,9 +262,11 @@ const ProductsGrid = ({}: IProductsGridProps) => {
         <div className="space-y-5">
           <FadeInMotion>
             <div className="text-xl mb-24">
-              <strong>Cremas de nueces 100% naturales</strong> libres de sal,
-              azúcar, endulzantes artificiales, conservantes, aceites añadidos y
-              aditivos.
+              <h1 className="inline">
+                <strong>Cremas de nueces 100% naturales</strong>
+              </h1>{" "}
+              libres de sal, azúcar, endulzantes artificiales, conservantes,
+              aceites añadidos y aditivos.
             </div>
           </FadeInMotion>
           {col1.map((tile, index) => tilesMapper(tile, index, 1))}
