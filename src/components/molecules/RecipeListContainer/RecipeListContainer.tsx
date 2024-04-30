@@ -44,10 +44,10 @@ const RecipeListContainer = async ({ tag = "" }: IRecipeListContainerProps) => {
           <h1 className="pb-5 font-serif text-5xl font-semibold">
             Recetas Nutti
           </h1>
-          <div className="mb-4 flex gap-5 font-semibold">
+          <div className="mb-4 flex gap-5 font-semibold hidden">
             Cuál de las cremas Nutti tienes?
           </div>
-          <div>
+          <div className="hidden">
             <ul className="flex flex-wrap gap-2">
               {recipesIngredients.map((product) => (
                 <li key={product.slug}>
