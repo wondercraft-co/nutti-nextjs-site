@@ -1,6 +1,7 @@
 "use client";
 import FadeInMotion from "@/components/atoms/FadeInMotion";
 import ProductTile from "@/components/atoms/ProductTile";
+import Image from "next/image";
 import { cn } from "@/utils";
 
 type TProductTile = {
@@ -10,6 +11,7 @@ type TProductTile = {
   className?: string;
   label?: string;
   description?: string;
+  img?: string;
 };
 
 const fromColors = [
@@ -140,86 +142,147 @@ const vidrioPink: TProductTile = {
   label: "/labels/Etiquetas-para-web-2.jpg",
 };
 
-const comment1: TProductTile = {
-  type: "comment",
-  name: "cristi.titi2312",
-  description:
-    "Es super hiper mega deliciosaaaaa la amo 🤤😍 destaparla y sentir esa aroma a canela y luego sentir su suave textura al probarla, es lo máximo super recomendada 👏👏👏... nota: todas.son deliciosas uuff pero esta es la mas 🔝💯",
-  className: "bg-b-pink",
-};
-const comment2: TProductTile = {
-  type: "comment",
-  name: "luisa_rueda05",
-  description: "Llevo un mes probándola, excelente producto 🔥 🙌 🩷 💫",
-  className: "bg-b-pink",
-};
-const comment3: TProductTile = {
-  type: "comment",
-  name: "ceciliagomez24037",
-  description:
-    "Son las mejores que he probado tanto en textura como en sabor 🤤",
-  className: "bg-b-pink",
-};
-const comment4: TProductTile = {
-  type: "comment",
-  name: "natalia_sorzano",
-  description: "Son las más ricas de todas!! Soy adicta a la de Marańón 🙈🙈",
-  className: "bg-b-pink",
-};
-const comment5: TProductTile = {
-  type: "comment",
-  name: "cami_marcas",
-  description:
-    "No necesito más!! Los amo @nutti.coparte de mis dias siempre 🙌🙌🙌🙌🙌🙌 🩷🩷🩷🩷🩷🩷🩷",
-  className: "bg-b-pink",
-};
-const comment6: TProductTile = {
-  type: "comment",
-  name: "cuidartebynatalia",
-  description: "Nos hacen muy felices porque son DELICIOSAS 😍💘✨",
-  className: "bg-b-pink",
-};
-const comment7: TProductTile = {
-  type: "comment",
-  name: "laurapadillaconsultorjust",
-  description: "Y las mas ricas de todo el mercado. 💜🥰",
-  className: "bg-b-pink",
-};
-const comment8: TProductTile = {
-  type: "comment",
-  name: "javierprieto.t",
-  description:
-    "Cuando me preguntan por buenas cremas de nueces siempre los recomiendo! Buenísimas!",
-  className: "bg-b-pink",
-};
+const comments: TProductTile[] = [
+  {
+    type: "comment",
+    name: "drcarlosjaramillo",
+    description: "Hermoso proyecto de coherencia y productos maravillosos",
+    className: "bg-b-pink",
+    img: "/profiles/drcarlosjaramillo.jpg",
+  },
+  {
+    type: "comment",
+    name: "ale.prietoo",
+    description: "Amo la de almendras",
+    className: "bg-b-pink",
+    img: "/profiles/aleprietoo.jpg",
+  },
+  {
+    type: "comment",
+    name: "silviadelgadop_",
+    description: "Estoy obsesionada con la crema de marañón 🤩🤩",
+    className: "bg-b-pink",
+    img: "/profiles/silviadelgadop_.jpg",
+  },
+  {
+    type: "comment",
+    name: "pilimart",
+    description: "Después de esa crema de Marañon no hay más 🤤🤤🤤",
+    className: "bg-b-pink",
+    img: "/profiles/pilimart.jpg",
+  },
+  {
+    type: "comment",
+    name: "rossicocina",
+    description: "😍😍😍 Lasquiero todas",
+    className: "bg-b-pink",
+    img: "/profiles/rossicocina.jpg",
+  },
+  {
+    type: "comment",
+    name: "brenda.mazutier22",
+    description: "Maní 🥜 deliciosa, suave y lo mejor sin azúcar",
+    className: "bg-b-pink",
+    img: "/profiles/brendamazutier.jpg",
+  },
+  {
+    type: "comment",
+    name: "montessori.omw",
+    description: "Macadamia 100%%%%%%%% 🤩🤩🤩🤩",
+    className: "bg-b-pink",
+    img: "/profiles/montessori.jpg",
+  },
+  {
+    type: "comment",
+    name: "tedeterricola",
+    description: "Y de macadamia que es la más deliciosa del mundo! ❤️",
+    className: "bg-b-pink",
+    img: "/profiles/tedeterricola.jpg",
+  },
+
+
+  {
+    type: "comment",
+    name: "cristi.titi2312",
+    description:
+      "Es super hiper mega deliciosaaaaa la amo 🤤😍 destaparla y sentir esa aroma a canela y luego sentir su suave textura al probarla, es lo máximo super recomendada 👏👏👏... nota: todas.son deliciosas uuff pero esta es la mas 🔝💯",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "luisa_rueda05",
+    description: "Llevo un mes probándola, excelente producto 🔥 🙌 🩷 💫",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "ceciliagomez24037",
+    description:
+      "Son las mejores que he probado tanto en textura como en sabor 🤤",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "natalia_sorzano",
+    description: "Son las más ricas de todas!! Soy adicta a la de Marańón 🙈🙈",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "cami_marcas",
+    description:
+      "No necesito más!! Los amo @nutti.coparte de mis dias siempre 🙌🙌🙌🙌🙌🙌 🩷🩷🩷🩷🩷🩷🩷",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "cuidartebynatalia",
+    description: "Nos hacen muy felices porque son DELICIOSAS 😍💘✨",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "laurapadillaconsultorjust",
+    description: "Y las mas ricas de todo el mercado. 💜🥰",
+    className: "bg-b-pink",
+  },
+  {
+    type: "comment",
+    name: "javierprieto.t",
+    description:
+      "Cuando me preguntan por buenas cremas de nueces siempre los recomiendo! Buenísimas!",
+    className: "bg-b-pink",
+  },
+];
 
 const col1 = [
   flexAlmendra,
   flexMacadamia,
-  comment4,
-  comment5,
+  comments[3],
+  comments[4],
   flexMani,
   flexMaranon,
 ];
 const col2 = [
   vidrioAlmendras,
   vidrioCanela,
-  comment2,
-  comment3,
+  comments[1],
+  comments[2],
   vidrioCocoa,
-  comment6,
+  comments[5],
+  vidrioPink,
+  comments[8],
   vidrioGolden,
-  vidrioMacadamia,
 ];
 
 const col3 = [
-  comment1,
+  comments[0],
   vidrioMani,
   vidrioMaranon,
   vidrioMatcha,
-  comment7,
-  comment8,
-  vidrioPink,
+  comments[6],
+  comments[7],
+  vidrioMacadamia,
 ];
 
 const tilesMapper = (tile: TProductTile, index: number, column: number) => {
@@ -237,15 +300,26 @@ const tilesMapper = (tile: TProductTile, index: number, column: number) => {
   } else {
     return (
       <FadeInMotion delay={index * column * 0.1} key={index}>
-        <div className="bg-white p-4 rounded-2xl flex justify-center gap-3 shadow-xl">
+        <div className="bg-white p-4 rounded-2xl flex justify-start gap-3 shadow-xl">
           <div
             className={cn(
               "bg-gradient-to-t w-10 h-10 flex-shrink-0 rounded-full",
               tile.className
             )}
-          ></div>
+          >
+            {tile.img && (
+              <Image
+                src={tile.img}
+                className="rounded-full"
+                alt={tile.name}
+                width={40}
+                height={40}
+              />
+            )}
+          </div>
           <div className="text-sm">
-            <strong>{tile.name}</strong>: {tile.description}
+            <strong>{tile.name}</strong>
+            <br /> {tile.description}
           </div>
         </div>
       </FadeInMotion>
