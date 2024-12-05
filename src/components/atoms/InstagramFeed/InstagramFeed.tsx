@@ -22,7 +22,7 @@ const InstagramFeed = ({}: IInstagramFeedProps) => {
     <div className="container max-w-6xl mt-20">
       <div
         className="embedsocial-hashtag"
-        data-ref="b984f101a8679b85d11b94a37c89426b8aaa147b"
+        data-ref="82f940e9f84711b74aa9f86163b0d74bfb3535c8"
       >
         <a
           className="feed-powered-by-es"
