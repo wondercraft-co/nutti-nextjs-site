@@ -37,6 +37,14 @@ const randomGradientFromTo = () => {
   return `${from} ${to}`;
 };
 
+const flexPistacho: TProductTile = {
+  type: "product",
+  name: "Flexible Pistacho",
+  image: "/products/sachet-pistacho.png",
+  className: "from-b-purple to-b-yellow-light",
+  // className: randomGradientFromTo(),
+  label: "/labels/Etiquetas-para-web-14.jpg",
+};
 const flexAlmendra: TProductTile = {
   type: "product",
   name: "Flexible Almendra",
@@ -53,6 +61,22 @@ const flexMacadamia: TProductTile = {
   // className: randomGradientFromTo(),
   label: "/labels/Etiquetas-para-web-10.jpg",
 };
+const flexCocoa: TProductTile = {
+  type: "product",
+  name: "Flexible Cocoa",
+  image: "/products/sachet-cocoa.png",
+  className: "from-b-green to-b-teal-light",
+  // className: randomGradientFromTo(),
+  label: "/labels/Etiquetas-para-web-8.jpg",
+};
+const flexCanela: TProductTile = {
+  type: "product",
+  name: "Flexible Canela",
+  image: "/products/sachet-canela.png",
+  className: "from-b-yellow to-b-teal-light",
+  // className: randomGradientFromTo(),
+  label: "/labels/Etiquetas-para-web-9.jpg",
+};
 const flexMani: TProductTile = {
   type: "product",
   name: "Flexible Maní",
@@ -60,6 +84,14 @@ const flexMani: TProductTile = {
   className: "from-b-yellow to-b-yellow-light",
   // className: randomGradientFromTo(),
   label: "/labels/Etiquetas-para-web-12.jpg",
+};
+const flexPink: TProductTile = {
+  type: "product",
+  name: "Flexible Pink Fud",
+  image: "/products/sachet-pink.png",
+  className: "from-b-teal to-b-teal-light",
+  // className: randomGradientFromTo(),
+  label: "/labels/Etiquetas-para-web-2.jpg",
 };
 const flexMaranon: TProductTile = {
   type: "product",
@@ -133,14 +165,6 @@ const vidrioMatcha: TProductTile = {
   // className: randomGradientFromTo(),
   label: "/labels/Etiquetas-para-web-3.jpg",
 };
-const vidrioPink: TProductTile = {
-  type: "product",
-  name: "Macadamia Pink Fud",
-  image: "/products/vidrio-pink.png",
-  className: "from-b-teal to-b-teal-light",
-  // className: randomGradientFromTo(),
-  label: "/labels/Etiquetas-para-web-2.jpg",
-};
 
 const comments: TProductTile[] = [
   {
@@ -200,7 +224,6 @@ const comments: TProductTile[] = [
     img: "/profiles/tedeterricola.jpg",
   },
 
-
   {
     type: "comment",
     name: "cristi.titi2312",
@@ -256,30 +279,33 @@ const comments: TProductTile[] = [
 ];
 
 const col1 = [
+  comments[0],
   flexAlmendra,
   flexMacadamia,
   comments[3],
   comments[4],
-  flexMani,
   flexMaranon,
+  flexMani,
+  vidrioGolden,
 ];
 const col2 = [
-  vidrioAlmendras,
-  vidrioCanela,
+  flexPistacho,
   comments[1],
+  vidrioAlmendras,
   comments[2],
+  vidrioCanela,
   vidrioCocoa,
-  comments[5],
-  vidrioPink,
+  flexCocoa,
   comments[8],
-  vidrioGolden,
 ];
 
 const col3 = [
-  comments[0],
-  vidrioMani,
+  comments[5],
+  flexCanela,
+  flexPink,
   vidrioMaranon,
   vidrioMatcha,
+  vidrioMani,
   comments[6],
   comments[7],
   vidrioMacadamia,
