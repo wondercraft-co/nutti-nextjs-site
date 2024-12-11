@@ -279,7 +279,6 @@ const comments: TProductTile[] = [
 ];
 
 const col1 = [
-  comments[0],
   flexAlmendra,
   flexMacadamia,
   comments[3],
@@ -300,9 +299,10 @@ const col2 = [
 ];
 
 const col3 = [
-  comments[5],
+  comments[0],
   flexCanela,
   flexPink,
+  comments[5],
   vidrioMaranon,
   vidrioMatcha,
   vidrioMani,
