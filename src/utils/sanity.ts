@@ -44,9 +44,10 @@ export interface Recipe {
   _updatedAt: string;
   image: Image;
   videoUrl: string;
-  _createdAt: string; 
+  _createdAt: string;
   _type: string;
   description: any;
+  metaDescription?: string;
   ingredients: Ingredient[];
 }
 
@@ -57,6 +58,7 @@ export interface Slug {
 
 export interface Image {
   asset: Asset;
+  alt?: string;
 }
 
 export interface Asset {
