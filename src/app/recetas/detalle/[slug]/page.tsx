@@ -11,6 +11,20 @@ interface PageProps {
   };
 }
 
+const getRecipeSteps = (blocks: any): string[] => {
+  if (!Array.isArray(blocks)) return [];
+  return blocks
+    .filter((block) => block?._type === "block")
+    .map((block) =>
+      (block.children || [])
+        .filter((child: any) => child?._type === "span")
+        .map((span: any) => span.text)
+        .join("")
+        .trim()
+    )
+    .filter((text: string) => text.length > 0);
+};
+
 const getRecipe = async (slug: string) => {
   const recipe = await sanityClient.fetch<Recipe>(
     `*[_type == "recipe" && slug.current == $slug][0] {
@@ -62,8 +76,33 @@ export async function generateMetadata({
 export default async function RecipeDetail({ params }: PageProps) {
   const { slug } = params;
   const recipe = await getRecipe(slug);
+
+  const steps = getRecipeSteps(recipe?.description);
+  const imageUrl = recipe?.image?.asset?.url;
+  const recipeJsonLd =
+    recipe && recipe.title && imageUrl && steps.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Recipe",
+          name: recipe.title,
+          image: imageUrl,
+          recipeInstructions: steps.map((text) => ({
+            "@type": "HowToStep",
+            text,
+          })),
+        }
+      : null;
+
   return (
     <MainLayout>
+      {recipeJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(recipeJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
       <div className="container max-w-6xl pt-32 px-5">
         <Link href="/recetas" className="">
           <span className="bg-b-teal-light font-semibold px-5 py-4 rounded-full hover:bg-b-teal hover:text-white inline-flex items-center gap-3">
