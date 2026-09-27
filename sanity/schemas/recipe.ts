@@ -29,6 +29,19 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          type: 'string',
+          name: 'alt',
+          title: 'Alt text',
+        },
+      ],
+    }),
+    defineField({
+      type: 'text',
+      name: 'metaDescription',
+      title: 'Meta Description',
+      description: 'Used as the page meta description for this recipe.',
     }),
     defineField({
       type: 'array',

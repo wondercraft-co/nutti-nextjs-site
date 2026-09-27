@@ -2,6 +2,7 @@ import VideoPlayer from "@/components/atoms/VideoPlayer";
 import MainLayout from "@/components/molecules/MainLayout";
 import { Recipe, sanityClient } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next/types";
@@ -27,7 +28,8 @@ const getRecipe = async (slug: string) => {
         asset->{
             ...,
             metadata
-          }
+          },
+        alt
         }
       }`,
     {
@@ -50,6 +52,7 @@ export async function generateMetadata({
     metadataBase: new URL("https://www.nutti.co"),
     title: recipe.title + " - Nutti - Cremas de nueces",
     description:
+      recipe.metaDescription ||
       "Recetas practicas y deliciosas con nuestras cremas de nueces 100% naturales libres de sal, azúcar, endulzantes artificiales, conservantes, aceites añadidos y aditivos.",
     openGraph: {
       images: encodeURI(
@@ -73,6 +76,15 @@ export default async function RecipeDetail({ params }: PageProps) {
         </Link>
         <div className="grid grid-cols-1 mt-5 md:grid-cols-6">
           <div className="col-span-2">
+            {recipe.image?.asset?.url && (
+              <Image
+                src={recipe.image.asset.url}
+                alt={recipe.image.alt || ""}
+                width={recipe.image.asset.metadata.dimensions.width}
+                height={recipe.image.asset.metadata.dimensions.height}
+                className="rounded-2xl w-full h-auto object-cover mb-4"
+              />
+            )}
             <VideoPlayer url={recipe.videoUrl} />
           </div>
           <div className="col-span-4 p-5 pr-10">
